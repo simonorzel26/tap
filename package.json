@@ -1,53 +1,46 @@
 {
   "name": "tap",
   "version": "1.0.0",
-  "description": "A TypeScript package",
-  "keywords": [
-    "typescript",
-    "package"
+  "description": "TAP (Time Allocation Protocol) - A federated booking protocol for real-time availability and bookings across untrusted parties",
+  "private": true,
+  "packageManager": "bun@1.2.18",
+  "workspaces": [
+    "packages/*"
   ],
-  "homepage": "https://github.com/Simon Orzel/tap",
+  "keywords": [
+    "scheduling",
+    "booking",
+    "protocol",
+    "federated",
+    "real-time",
+    "availability",
+    "time-allocation",
+    "distributed-systems"
+  ],
+  "homepage": "https://github.com/simonorzel26/tap",
   "bugs": {
-    "url": "https://github.com/Simon Orzel/tap/issues"
+    "url": "https://github.com/simonorzel26/tap/issues"
   },
-  "author": "",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Simon Orzel/tap.git"
+    "url": "git+https://github.com/simonorzel26/tap.git"
   },
-  "files": [
-    "dist"
-  ],
-  "type": "module",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "default": "./dist/index.js"
-    }
-  },
+  "author": "simonorzel26",
+  "license": "MIT",
   "scripts": {
-    "build": "bun build ./src/index.ts --outdir ./dist --target node --format esm && bun --bun tsc --declaration --emitDeclarationOnly --outDir dist src/index.ts src/utils.ts",
-    "dev": "bun build ./src/index.ts --outdir ./dist --target node --format esm --watch",
-    "clean": "rm -rf dist",
-    "typecheck": "bun --bun tsc --noEmit",
-    "prepublishOnly": "bun run ci",
-    "ci": "bun run build && bun run test && bun run lint",
-    "lint": "biome check . --fix",
-    "format": "biome format --write .",
-    "lint:fix": "biome check --write .",
-    "test": "bun test",
-    "test:watch": "bun test --watch",
-    "test:coverage": "bun test --coverage",
-    "release": "release-it"
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "clean": "turbo run clean",
+    "typecheck": "turbo run typecheck",
+    "test": "turbo run test",
+    "test:watch": "turbo run test:watch",
+    "test:coverage": "turbo run test:coverage",
+    "lint": "turbo run lint",
+    "format": "turbo run format",
+    "lint:fix": "turbo run lint:fix"
   },
   "devDependencies": {
-    "typescript": "latest",
-    "bun-types": "latest",
     "@biomejs/biome": "latest",
-    "release-it": "latest"
-  },
-  "license": "MIT"
+    "turbo": "latest"
+  }
 }

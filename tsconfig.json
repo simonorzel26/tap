@@ -1,34 +1,42 @@
 {
   "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "skipLibCheck": true,
-    "target": "es2022",
-    "allowJs": true,
-    "resolveJsonModule": true,
-    "moduleDetection": "force",
-    "isolatedModules": true,
-    "verbatimModuleSyntax": true,
+    "forceConsistentCasingInFileNames": true,
     "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
-    "module": "NodeNext",
-    "outDir": "dist",
-    "rootDir": "src",
-    "sourceMap": true,
+    "noPropertyAccessFromIndexSignature": false,
+    "exactOptionalPropertyTypes": true,
+    "skipLibCheck": true,
     "declaration": true,
     "declarationMap": true,
-    "lib": [
-      "es2022"
-    ],
-    "types": [
-      "bun-types"
-    ]
+    "sourceMap": true,
+    "outDir": "./dist",
+    "rootDir": ".",
+    "baseUrl": ".",
+    "paths": {
+      "@tap/*": ["packages/*/src"]
+    }
   },
   "include": [
-    "src/**/*"
+    "packages/*/src/**/*",
+    "packages/*/index.ts",
+    "packages/*/*.ts"
   ],
   "exclude": [
+    "node_modules",
     "dist",
-    "node_modules"
+    "**/*.test.ts",
+    "**/*.spec.ts"
   ]
 }
