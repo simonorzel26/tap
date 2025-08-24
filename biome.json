@@ -1,0 +1,11 @@
+{
+        "$schema": "https://biomejs.dev/schemas/latest/schema.json",
+  "linter": { "enabled": true },
+  "formatter": { "enabled": true },
+  "files": {
+    "includes": [
+      "src/**/*.ts"
+    ]
+  },
+  "javascript": { "formatter": { "quoteStyle": "single", "trailingCommas": "all" } }
+}
