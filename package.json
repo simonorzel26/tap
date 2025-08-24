@@ -37,7 +37,8 @@
     "test:coverage": "turbo run test:coverage",
     "lint": "turbo run lint",
     "format": "turbo run format",
-    "lint:fix": "turbo run lint:fix"
+    "lint:fix": "turbo run lint:fix",
+    "check": "turbo run lint"
   },
   "devDependencies": {
     "@biomejs/biome": "latest",
