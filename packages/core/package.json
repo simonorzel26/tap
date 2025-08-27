@@ -1,39 +1,19 @@
 {
 	"name": "@tap/core",
-	"version": "1.0.0",
-	"description": "Core TypeScript utilities",
-	"keywords": [
-		"typescript",
-		"utilities"
-	],
-	"files": [
-		"dist"
-	],
+	"version": "0.3.0",
 	"type": "module",
-	"main": "dist/index.js",
-	"types": "dist/index.d.ts",
+	"private": true,
 	"exports": {
-		".": {
-			"types": "./dist/index.d.ts",
-			"import": "./dist/index.js",
-			"default": "./dist/index.js"
-		}
+		"./*": "./src/*.ts"
 	},
+	"main": "src/index.ts",
 	"scripts": {
-		"build": "bun build ./src/index.ts --outdir ./dist --target node --format esm && bun --bun tsc --declaration --emitDeclarationOnly --outDir dist src/index.ts src/utils.ts",
-		"dev": "bun build ./src/index.ts --outdir ./dist --target node --format esm --watch",
-		"clean": "rm -rf dist",
-		"typecheck": "bun --bun tsc --noEmit",
-		"lint": "biome check . --fix",
-		"format": "biome format --write .",
-		"lint:fix": "biome check --write .",
-		"test": "bun test",
-		"test:watch": "bun test --watch",
-		"test:coverage": "bun test --coverage"
+		"typecheck": "tsc --noEmit",
+		"test": "bun test"
 	},
 	"devDependencies": {
-		"typescript": "latest",
-		"bun-types": "latest"
-	},
-	"license": "MIT"
+		"typescript": "^5.6.3",
+		"bun-types": "latest",
+		"zod": "^3.23.8"
+	}
 }
